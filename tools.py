@@ -69,28 +69,28 @@ def evaluate_return(order_id):
 
     # Rules
 
-    # ❌ Clearance → no return
+    #  Clearance → no return
     if str(product["is_clearance"]).upper() == "TRUE":
         return {
             "decision": "NO",
             "reason": "Clearance items are not returnable"
         }
 
-    # ⏳ Return window check
+    #  Return window check
     if days_passed > 7:
         return {
             "decision": "NO",
             "reason": f"Return window expired ({days_passed} days)"
         }
 
-    # ⚠️ Sale item
+    #  Sale item
     if str(product["is_sale"]).upper() == "TRUE":
         return {
             "decision": "PARTIAL",
             "reason": "Sale item – only exchange allowed"
         }
 
-    # ✅ Normal return
+    #  Normal return
     return {
         "decision": "YES",
         "reason": "Eligible for return within 7 days"

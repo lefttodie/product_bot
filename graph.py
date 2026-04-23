@@ -6,6 +6,7 @@ import json
 import os
 from dotenv import load_dotenv
 from langchain_core.messages import SystemMessage
+import random
 
 load_dotenv()
 
@@ -60,50 +61,19 @@ If user says "hi", "hello":
 
 You are NOT a general chatbot. You are a domain-specific retail assistant.
 """
-import random
 
-# OPENROUTER_KEYS = [
-#     "key1",
-#     "key2",
-#     "key3",
-#     "key4",
-#     "key5"
-# ]
-
-# def get_llm():
-#     return ChatOpenAI(
-#         model="inclusionai/ling-2.6-flash:free",
-#         openai_api_base="https://openrouter.ai/api/v1",
-#         openai_api_key=random.choice(OPENROUTER_KEYS),
-#         default_headers={
-#             "HTTP-Referer": "http://localhost:8501",
-#             "X-Title": "Retail AI Assistant"
-#         }
-#     )
-
-import random
 
 keys = os.getenv("OPENROUTER_API_KEYS").split(",")
 
 llm = ChatOpenAI(
     model="openai/gpt-oss-120b:free",
     openai_api_base="https://openrouter.ai/api/v1",
-    openai_api_key=random.choice(keys),  # 🔥 key rotation
+    openai_api_key=random.choice(keys),  #  key rotation
     default_headers={
         "HTTP-Referer": "http://localhost:8501",
         "X-Title": "Retail AI Assistant"
     }
 )
-#  Use a reliable model for tool calling
-# llm = ChatOpenAI(
-#     model="inclusionai/ling-2.6-flash:free",  # better than free models
-#     openai_api_base="https://openrouter.ai/api/v1",
-#     openai_api_key=os.getenv("OPENROUTER_API_KEY"),
-#     default_headers={
-#         "HTTP-Referer": "http://localhost:8501",
-#         "X-Title": "Retail AI Assistant"
-#     }
-# )
 
 #  Tool registry
 TOOLS = {
