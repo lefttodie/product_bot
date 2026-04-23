@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Env files
+.env
+
+# Git
+.git
+.gitignore
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Virtual env
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Cache
+.cache/
+
+# Node (if any)
+node_modules/
+
+# Build artifacts
+dist/
+build/
