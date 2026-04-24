@@ -168,7 +168,7 @@ I need a modest evening dress under 300 in size 8 on sale
 
 ---
 
-### 📦 Support Scenario
+###  Support Scenario
 
 **Input:**
 
@@ -185,7 +185,7 @@ Can I return order 1043?
 
 ---
 
-### ⚠️ Edge Case
+###  Edge Case
 
 **Input:**
 
@@ -201,7 +201,7 @@ Order not found
 
 ---
 
-## 🎥 Demo Requirements
+##  Demo Requirements
 
 The project includes a demo video covering:
 
@@ -229,11 +229,11 @@ docker buildx build --platform linux/amd64 --provenance=false -t <acr-name>.azur
 
 ##  Key Highlights
 
-* 🔹 Agentic AI with tool calling
-* 🔹 Real-world retail simulation
-* 🔹 Business-rule-based reasoning
-* 🔹 Clean modular design
-* 🔹 Production-ready structure
+*  Agentic AI with tool calling
+*  Real-world retail simulation
+*  Business-rule-based reasoning
+*  Clean modular design
+*  Production-ready structure
 
 ---
 
